@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "HHello Extensions of the world!",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": "home.png"
+  },
+  "background": {
+    "service_worker": "./scripts/background.js"
+  },
+  "permissions": ["tabs"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["main.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["pp.jpeg"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
